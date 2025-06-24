@@ -50,7 +50,11 @@ function playGame () {
             console.log(`Computer: ${computerChoice}`)
             console.log("=> You lost")
             computerScore++
-        } else {-
+        } else if (humanChoice === computerChoice) {
+            console.log(`Human: ${humanChoice}`)
+            console.log(`Computer: ${computerChoice}`)
+            console.log("=> Tie !")
+        } else {
             console.log(`Human: ${humanChoice}`)
             console.log(`Computer: ${computerChoice}`)
             console.log("=> You lost")
@@ -64,10 +68,10 @@ function playGame () {
         const humanChoice = getHumanChoice(); // Assign variable to human choice
         const computerChoice = getComputerChoice(); // Assign variable to computer choice
         playRound (humanChoice,computerChoice); // Initiate round function with both variable
-        console.log(
-            `---------
-Round: ${round}
----------`); // Only use quote around the whole block
+        console.log("---------")
+        console.log(`Round: ${round}`)
+        console.log(`Human score: ${humanScore} | Computer score: ${computerScore}`)
+        console.log("---------")
     }
 }
 
